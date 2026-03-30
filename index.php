@@ -147,7 +147,7 @@ if (empty($_POST['contract']) || $_POST['contract'] != '1') {
 
 if ($errors) {
 
-    header('Location: index.php')
+    header('Location: index.php');
     exit();
   }
 
