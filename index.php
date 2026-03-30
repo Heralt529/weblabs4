@@ -23,10 +23,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['contract'] = !empty($_COOKIE['contract_error']);
 
   if ($errors['name']) {
-    // Удаляем куки, указывая время устаревания в прошлом.
     setcookie('name_error', '', 100000);
     setcookie('name_value', '', 100000);
-    // Выводим сообщение.
     $messages[] = '<div class="error">Введите корректное имя</div>';
   }
 
@@ -152,8 +150,7 @@ if ($errors) {
     header('Location: index.php')
     exit();
   }
-  exit();
-}
+
 else{
     setcookie('name_error', '', 100000);
     setcookie('phone_error', '', 100000);
